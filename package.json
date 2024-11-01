@@ -1,0 +1,26 @@
+{
+  "name": "all-natural-backend",
+  "version": "1.0.0",
+  "description": "backend for all-natural-frontend",
+  "main": "app.js",
+  "scripts": {
+    "start": "ts-node src/app.ts",
+    "dev": "nodemon .",
+    "build": "tsc",
+    "serve": "node dist/app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Zhivko Nikolov",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.8.6",
+    "express": "^4.21.1",
+    "nodemon": "^3.1.7",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.6.3"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5"
+  }
+}
