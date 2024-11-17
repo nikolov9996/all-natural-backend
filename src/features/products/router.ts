@@ -1,9 +1,10 @@
 import { Request, Response, Router } from "express";
+import { ROUTES } from "../../routes/constants";
 
 const productsRouter = Router();
 
-productsRouter.get("/products", (req: Request, res: Response) => {
+productsRouter.get(ROUTES.PRODUCTS, (req: Request, res: Response) => {
   res.send("Products");
 });
 
-export default productsRouter
+export default productsRouter;
