@@ -8,4 +8,4 @@ const categorySchema = new Schema<ICategory>({
   },
 });
 
-export const Category = model<ICategory>("Category", categorySchema);
+export const CategoryModel = model<ICategory>("Category", categorySchema);

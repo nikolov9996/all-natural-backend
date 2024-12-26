@@ -3,6 +3,7 @@ import mainRouter from "./routes";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
 import bodyParser from "body-parser";
+import requestLogger from "./middlewares/requestLogger";
 
 dotenv.config();
 
@@ -20,7 +21,9 @@ db.once("open", () => {
 });
 
 app.use(bodyParser.json());
+app.use(requestLogger);
 app.use(mainRouter);
+
 app.listen(port, () => {
   console.log(`Server running at PORT: ${port}`);
 });

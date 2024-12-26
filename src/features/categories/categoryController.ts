@@ -1,11 +1,11 @@
 import { Request, Response } from "express";
 
-import { Category } from "./categoryModel";
+import { CategoryModel } from "./categoryModel";
 
 async function createCategory(req: Request, res: Response) {
   const data = req.body;
   try {
-    const record = await Category.create(data);
+    const record = await CategoryModel.create(data);
     await record.save();
     res.send("Category Added!");
   } catch (error) {
@@ -15,7 +15,7 @@ async function createCategory(req: Request, res: Response) {
 
 async function getCategories(req: Request, res: Response) {
   try {
-    const records = await Category.find({}).exec();
+    const records = await CategoryModel.find({}).limit(10).exec();
     res.send(records);
   } catch (error) {
     res.send("Something went wrong").status(500);
